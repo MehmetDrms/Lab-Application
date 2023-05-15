@@ -2,7 +2,7 @@
 try {
     $db = new PDO("mysql:host=localhost;dbname=lab_application", "root", "");
 } catch ( PDOException $e ){
-    echo "Something went wrong.: ".$e->getMessage();
+    echo "Something went wrong: ".$e->getMessage();
 }
 $insert = $db->prepare("INSERT INTO students (full_name, email, gender) VALUES (?, ?, ?)");
 $isThereEmail = $db->prepare("SELECT * FROM students WHERE email = ?");
